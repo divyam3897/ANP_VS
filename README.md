@@ -37,7 +37,7 @@ robust ones by minimizing the adversarial and *{Vulnerability Suppression (VS)* 
 
   * Train ANP-VS
   ```
-  $ python -m ANP_VS.src.experiments.run --net lenet_conv --mode bbd --eps=0.3 --step_size=0.01 --adv_train=True --pgd_steps=20 --vulnerability=True --data mnist --n_epochs 200 --beta_weight=4 --lambda_weight=0.001     
+  $ python -m ANP_VS.src.experiments.run --net lenet_conv --mode bbd --eps=0.3 --step_size=0.01 --adv_train=True --pgd_steps=20 --vulnerability=True --data mnist --n_epochs 200 --beta_weight=4 --lambda_weight=0.001
   ```
 
 ### CIFAR datasets
@@ -53,7 +53,7 @@ robust ones by minimizing the adversarial and *{Vulnerability Suppression (VS)* 
   $ python -m ANP_VS.src.experiments.run --net vgg16 --mode bbd --eps=0.03 --step_size=0.007 --adv_train=True --pgd_steps=10 --vulnerability=True --data cifar10 --n_epochs 200 --beta_weight=2 --lambda_weight=0.0001   
   
   # CIFAR-100 
-  $ python -m ANP_VS.src.experiments.run --net vgg16 --mode bbd --eps=0.03 --step_size=0.007 --adv_train=True --pgd_steps=10 --vulnerability=True --data cifar100 --n_epochs 200 --beta_weight=1 --lambda_weight=0.0001 
+  $ python -m ANP_VS.src.experiments.run --net vgg16 --mode bbd --eps=0.03 --step_size=0.007 --adv_train=True --pgd_steps=10 --vulnerability=True --data cifar100 --n_epochs 200 --beta_weight=1 --lambda_weight=0.1
   ```
   
 ## Evaluation
@@ -77,10 +77,10 @@ For black-box attack, train a base adversarial training model and set `--white_b
 $ python -m ANP_VS.src.experiments.run --net lenet_conv --mode bbd --eval_mode test --data mnist --adv_train=True
 
 # CIFAR-10
-python -m ANP_VS.src.experiments.run --net vgg16 --mode bbd --eval_mode test --data cifar10 --adv_train=True
+$ python -m ANP_VS.src.experiments.run --net vgg16 --mode bbd --eval_mode test --data cifar10 --adv_train=True
 
 # CIFAR-100
-python -m ANP_VS.src.experiments.run --net vgg16 --mode bbd --eval_mode test --data cifar100 --adv_train=True
+$ python -m ANP_VS.src.experiments.run --net vgg16 --mode bbd --eval_mode test --data cifar100 --adv_train=True
 ```
 
 ## Results
